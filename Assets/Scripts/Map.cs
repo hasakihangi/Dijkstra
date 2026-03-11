@@ -2,45 +2,29 @@
 
 public class Map
 {
-    public bool[,] board;
+    public int[,] board;
 
     public int Width => board.GetLength(0);
     public int Height => board.GetLength(1);
     
+    // 整数的10表示1(表示有一位小数)
     public Map(int width, int height)
     {
-        board = new bool[width,height];
-        // InitBoard();
+        board = new int[width,height];
+        for (int j = 0; j < height; j++)
+        {
+            for (int i = 0; i < width; i++)
+            {
+                board[i,j] = 10;
+            }
+        }
     }
-
-    // private void InitBoard()
-    // {
-    //     for (int j = 0; j < Width; j++) // 每行
-    //     {
-    //         for (int i = 0; i < Height; i++) // 每列
-    //         {
-    //             board[i,j] = new Cell(true, 1);
-    //         }
-    //     }
-    // }
-    //
-    public ref bool this[int x, int y]
+    
+    public ref int this[int x, int y]
     {
         get
         {
             return ref board[x,y];
         }
     }
-
-    // public Cell this[int x, int y]
-    // {
-    //     get
-    //     {
-    //         return board[x,y];
-    //     }
-    //     set
-    //     {
-    //         board[x,y] = value;
-    //     }
-    // }
 }

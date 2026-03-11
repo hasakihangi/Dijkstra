@@ -9,9 +9,9 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         map = new Map(4, 4);
-        map[0, 0] = false;
-        map[0, 1] = false;
-        map[2, 2] = false;
+        map[0, 0] = -1;
+        map[0, 1] = -1;
+        map[2, 2] = -1;
     }
 
     // Update is called once per frame
