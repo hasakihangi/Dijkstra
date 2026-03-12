@@ -41,6 +41,7 @@ public static class DijkstraUtils
         {
             Node node = openSet.PullRoot();
             Vector2Int current = node.grid;
+            
             if (costTable.TryGetValue(current, out long costInTable))
             {
                 if (costInTable < node.cost)

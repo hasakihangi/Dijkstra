@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
         // 测试寻路, 从(0,0) -> (3,3)
         Vector2Int from = new Vector2Int(0,0);
         DijkstraUtils.Calculate(new Vector2Int(0,0), map.board, costTable, cameTable);
-        DijkstraResult result = new DijkstraResult(cameTable, costTable);
+        DijkstraResult result = new DijkstraResult(cameTable);
 
         Vector2Int to = new Vector2Int(3, 3);
         if (result.IsGridValid(to))

@@ -5,18 +5,18 @@ using UnityEngine;
 public struct DijkstraResult
 {
     public Dictionary<Vector2Int, Vector2Int> cameTable; 
-    public Dictionary<Vector2Int, long> costTable;
+    // public Dictionary<Vector2Int, long> costTable;
 
 
-    public DijkstraResult(Dictionary<Vector2Int, Vector2Int> cameTable, Dictionary<Vector2Int, long> costTable)
+    public DijkstraResult(Dictionary<Vector2Int, Vector2Int> cameTable/*, Dictionary<Vector2Int, long> costTable*/)
     {
         this.cameTable = cameTable;
-        this.costTable = costTable;
+        // this.costTable = costTable;
     }
 
     public bool IsGridValid(Vector2Int grid)
     {
-        if (costTable.ContainsKey(grid))
+        if (cameTable.ContainsKey(grid))
             return true;
         
         return false;
