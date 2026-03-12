@@ -5,6 +5,12 @@ public class MinHeap<T> where T : IComparable<T>
 {
     private List<T> heap = new List<T>();
     public int Count => heap.Count;
+
+    public void Insert(T value)
+    {
+        heap.Add(value);
+        HeapUp(heap.Count-1);
+    }
     
     public T PullRoot()
     {
@@ -18,15 +24,15 @@ public class MinHeap<T> where T : IComparable<T>
         return root;
     }
     
-    public bool TryPullRoot(out T T)
+    public bool TryPullRoot(out T value)
     {
         if (heap.Count == 0)
         {
-            T = default;
+            value = default;
             return false;
         }
         
-        T = heap[0];
+        value = heap[0];
         heap[0] = heap[heap.Count-1];
         heap.RemoveAt(heap.Count-1);
         HeapDown(0);
